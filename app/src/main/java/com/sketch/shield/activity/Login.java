@@ -66,6 +66,9 @@ public class Login extends AppCompatActivity
 
             case R.id.rel_login:
 
+                intent = new Intent(Login.this, WelcomeScreen.class);
+                startActivity(intent);
+
                 break;
 
             case R.id.rel_forgot_password:

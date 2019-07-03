@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".utils.GlobalClass"
         android:theme="@style/MyTheme" >
 
         <activity android:name=".activity.Splash" >
@@ -53,6 +54,28 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.WelcomeScreen"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            android:label=""
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.Container"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            android:label=""
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+
 
     </application>
 
