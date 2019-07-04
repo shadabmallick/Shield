@@ -18,6 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,6 +29,8 @@ import android.widget.TextView;
 import com.sketch.shield.R;
 import com.sketch.shield.adapters.DrawerListAdapter;
 import com.sketch.shield.dataModel.DrawerItem;
+import com.sketch.shield.fragments.Home;
+import com.sketch.shield.fragments.Visitors;
 
 import java.util.ArrayList;
 
@@ -45,6 +49,9 @@ public class Container extends AppCompatActivity implements
     Toolbar toolbar;
 
     ArrayList<DrawerItem> drawerItemArrayList;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +74,12 @@ public class Container extends AppCompatActivity implements
     private void initViews(){
 
         toolbar  = findViewById(R.id.toolbar);
+       // toolbar_title  = findViewById(R.id.toolbar_title);
         tv_name  = findViewById(R.id.tv_name);
         tv_complex  = findViewById(R.id.tv_complex);
         tv_flat_no  = findViewById(R.id.tv_flat_no);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle("Home");
 
 
         drawer = findViewById(R.id.drawer_layout);
@@ -106,12 +116,17 @@ public class Container extends AppCompatActivity implements
 
         initNavigationItems();
 
+        transactFragment(new Home());
+
+
+
     }
+
 
 
     public void initNavigationItems(){
 
-        String[] some_array = getResources().getStringArray(R.array.drawer_items);
+        String[] drawer_items = getResources().getStringArray(R.array.drawer_items);
 
         ArrayList<Integer> myImageList = new ArrayList<>();
         myImageList.add(R.mipmap.home_white);
@@ -132,11 +147,11 @@ public class Container extends AppCompatActivity implements
         drawerItemArrayList = new ArrayList<>();
         DrawerItem drawerItem;
 
-        for (int i = 0; i < some_array.length; i++){
+        for (int i = 0; i < drawer_items.length; i++){
             drawerItem = new DrawerItem();
 
             drawerItem.setImgResID(myImageList.get(i));
-            drawerItem.setTitle(some_array[i]);
+            drawerItem.setTitle(drawer_items[i]);
             drawerItemArrayList.add(drawerItem);
 
         }
@@ -155,13 +170,16 @@ public class Container extends AppCompatActivity implements
 
             case 0:
 
+                toolbar.setTitle(drawerItemArrayList.get(position).getTitle());
 
+                transactFragment(new Home());
 
                 break;
 
             case 1:
 
-
+                toolbar.setTitle(drawerItemArrayList.get(position).getTitle());
+                transactFragment(new Visitors());
 
                 break;
 
@@ -217,6 +235,8 @@ public class Container extends AppCompatActivity implements
 
         }
 
+
+
     }
 
 
@@ -233,7 +253,6 @@ public class Container extends AppCompatActivity implements
 
                 }
             }, 300);
-
 
         }
 
@@ -275,47 +294,6 @@ public class Container extends AppCompatActivity implements
 
 
 
-    private void bottomViews(){
-
-        RelativeLayout rel_notification = findViewById(R.id.rel_notification);
-        RelativeLayout rel_help = findViewById(R.id.rel_help);
-        RelativeLayout rel_visitors = findViewById(R.id.rel_visitors);
-        RelativeLayout rel_alert = findViewById(R.id.rel_alert);
-
-        rel_notification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        rel_help.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        rel_visitors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        rel_alert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-
-    }
 
 
 

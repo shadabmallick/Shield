@@ -32,6 +32,17 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_notification"
+            android:textColor="@color/dark_grey"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:text="Notify Gate"
+            />
+
 
     </RelativeLayout>
 
@@ -60,6 +71,16 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_help"
+            android:textColor="@color/dark_grey"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:text="Help Desk"
+            />
 
     </RelativeLayout>
 
@@ -88,6 +109,16 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_visitors"
+            android:textColor="@color/dark_grey"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:text="Visitor"
+            />
 
     </RelativeLayout>
 
@@ -101,7 +132,7 @@
             android:id="@+id/rel_alert"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/blue_round"
+            android:background="@drawable/white_round_border"
             android:layout_centerInParent="true"
             android:padding="5dp"
             >
@@ -116,6 +147,16 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_alert"
+            android:textColor="@color/dark_grey"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:text="Panic Alert"
+            />
 
     </RelativeLayout>
 

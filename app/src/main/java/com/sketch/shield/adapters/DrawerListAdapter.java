@@ -23,7 +23,7 @@ public class DrawerListAdapter extends
     private ArrayList<Boolean> selectedItem;
 
 
-    onItemClickListner mListner;
+    private onItemClickListner mListner;
     public interface onItemClickListner{
         void onItemClick(int position);
     }

@@ -68,7 +68,16 @@
         <activity android:name=".activity.Container"
             android:theme="@style/MyTheme"
             android:windowSoftInputMode="stateHidden"
-            android:label=""
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".activity.AddVisitor"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
             >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

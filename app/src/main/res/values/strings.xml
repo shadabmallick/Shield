@@ -21,8 +21,12 @@
     <string name="register">Register</string>
     <string name="login">Login</string>
     <string name="otp">OTP</string>
+    <string name="purpose">Purpose</string>
+    <string name="date_time">Date and Time</string>
+    <string name="person_to_meet">Person To Meet</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="email_for_otp">Please enter your email for OTP</string>
+    <string name="submit">Submit</string>
 
 
 
