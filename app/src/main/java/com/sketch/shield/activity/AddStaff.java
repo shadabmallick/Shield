@@ -10,23 +10,25 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.sketch.shield.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AddVisitor extends AppCompatActivity
+public class AddStaff extends AppCompatActivity
         implements View.OnClickListener {
 
     RelativeLayout rel_back;
-    EditText edt_name, edt_phone, edt_flat_no, edt_purpose, edt_date_time, edt_person_to_meet;
+    EditText edt_name, edt_phone, edt_flat_no, edt_purpose;
     CircleImageView iv_user;
     Button btn_submit;
+    TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_visitor);
+        setContentView(R.layout.add_vendor);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -48,10 +50,10 @@ public class AddVisitor extends AppCompatActivity
         edt_phone = findViewById(R.id.edt_phone);
         edt_flat_no = findViewById(R.id.edt_flat_no);
         edt_purpose = findViewById(R.id.edt_purpose);
-        edt_date_time = findViewById(R.id.edt_date_time);
-        edt_person_to_meet = findViewById(R.id.edt_person_to_meet);
 
         btn_submit = findViewById(R.id.btn_submit);
+        tv1 = findViewById(R.id.tv1);
+        tv1.setText("Add Staff");
 
 
         rel_back.setOnClickListener(this);

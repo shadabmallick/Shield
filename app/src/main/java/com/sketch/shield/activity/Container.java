@@ -29,7 +29,10 @@ import android.widget.TextView;
 import com.sketch.shield.R;
 import com.sketch.shield.adapters.DrawerListAdapter;
 import com.sketch.shield.dataModel.DrawerItem;
+import com.sketch.shield.fragments.FamilyMember;
 import com.sketch.shield.fragments.Home;
+import com.sketch.shield.fragments.Staff;
+import com.sketch.shield.fragments.Vendor;
 import com.sketch.shield.fragments.Visitors;
 
 import java.util.ArrayList;
@@ -43,14 +46,12 @@ public class Container extends AppCompatActivity implements
     RecyclerView nav_drawer_recycler_view;
     CircleImageView iv_user;
     RelativeLayout rel_profile;
-    TextView tv_name, tv_complex, tv_flat_no;
+    TextView toolbar_title, tv_name, tv_complex, tv_flat_no;
 
     private FragmentManager mFragmentManager;
     Toolbar toolbar;
 
     ArrayList<DrawerItem> drawerItemArrayList;
-
-
 
 
     @Override
@@ -74,12 +75,12 @@ public class Container extends AppCompatActivity implements
     private void initViews(){
 
         toolbar  = findViewById(R.id.toolbar);
-       // toolbar_title  = findViewById(R.id.toolbar_title);
+        toolbar_title  = findViewById(R.id.toolbar_title);
         tv_name  = findViewById(R.id.tv_name);
         tv_complex  = findViewById(R.id.tv_complex);
         tv_flat_no  = findViewById(R.id.tv_flat_no);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Home");
+        toolbar_title.setText("Home");
 
 
         drawer = findViewById(R.id.drawer_layout);
@@ -170,28 +171,36 @@ public class Container extends AppCompatActivity implements
 
             case 0:
 
-                toolbar.setTitle(drawerItemArrayList.get(position).getTitle());
-
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
                 transactFragment(new Home());
 
                 break;
 
             case 1:
 
-                toolbar.setTitle(drawerItemArrayList.get(position).getTitle());
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
                 transactFragment(new Visitors());
 
                 break;
 
             case 2:
 
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
+                transactFragment(new Vendor());
+
                 break;
 
             case 3:
 
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
+                transactFragment(new Staff());
+
                 break;
 
             case 4:
+
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
+                transactFragment(new FamilyMember());
 
                 break;
 

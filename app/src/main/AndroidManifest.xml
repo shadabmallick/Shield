@@ -68,6 +68,7 @@
         <activity android:name=".activity.Container"
             android:theme="@style/MyTheme"
             android:windowSoftInputMode="stateHidden"
+            android:label=""
             >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -76,6 +77,53 @@
 
 
         <activity android:name=".activity.AddVisitor"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".activity.AddVendor"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".activity.SelectCategory"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.TypeList"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.AddStaff"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.AddFamilyMember"
             android:theme="@style/MyTheme"
             android:windowSoftInputMode="stateHidden"
             >

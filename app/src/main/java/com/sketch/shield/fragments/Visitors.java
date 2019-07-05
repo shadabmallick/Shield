@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,9 +28,8 @@ import java.util.ArrayList;
 
 public class Visitors extends Fragment implements VisitorAdapter.onItemClickListner {
 
-    TextView tv_user_name;
-    RecyclerView recycler_feeds;
-
+    TextView toolbar_title, tv_user_name;
+    RecyclerView recycler_visitor;
 
     ProgressDialog pd;
 
@@ -57,9 +57,12 @@ public class Visitors extends Fragment implements VisitorAdapter.onItemClickList
 
     private void initialisation(View view) {
 
+        toolbar_title = getActivity().findViewById(R.id.toolbar_title);
+
+
         tv_user_name = view.findViewById(R.id.tv_user_name);
-        recycler_feeds = view.findViewById(R.id.recycler_feeds);
-        recycler_feeds.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recycler_visitor = view.findViewById(R.id.recycler_visitor);
+        recycler_visitor.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
         ArrayList<VisitorData> feedsDataArrayList = new ArrayList<>();
@@ -72,7 +75,10 @@ public class Visitors extends Fragment implements VisitorAdapter.onItemClickList
 
         VisitorAdapter visitorAdapter = new VisitorAdapter(getActivity(),
                 feedsDataArrayList, this);
-        recycler_feeds.setAdapter(visitorAdapter);
+        recycler_visitor.setAdapter(visitorAdapter);
+
+
+        toolbar_title.setText("Visitor ("+feedsDataArrayList.size()+")");
     }
 
 
