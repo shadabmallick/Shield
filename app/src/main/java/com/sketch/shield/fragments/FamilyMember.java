@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 public class FamilyMember extends Fragment implements FamilyMemberAdapter.onItemClickListner {
 
-    TextView toolbar_title, tv_user_name;
+    TextView toolbar_title;
     RecyclerView recycler_vendor;
 
     ProgressDialog pd;
@@ -60,7 +60,6 @@ public class FamilyMember extends Fragment implements FamilyMemberAdapter.onItem
 
         toolbar_title = getActivity().findViewById(R.id.toolbar_title);
 
-        tv_user_name = view.findViewById(R.id.tv_user_name);
         recycler_vendor = view.findViewById(R.id.recycler_vendor);
         recycler_vendor.setLayoutManager(new LinearLayoutManager(getActivity()));
 

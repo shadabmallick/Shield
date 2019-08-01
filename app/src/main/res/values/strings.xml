@@ -28,6 +28,9 @@
     <string name="email_for_otp">Please enter your email for OTP</string>
     <string name="submit">Submit</string>
     <string name="relation">Relation</string>
+    <string name="car_name">Brand &amp; Model name</string>
+    <string name="car_color">Colour</string>
+    <string name="car_registration_no">Registration/Number plate no.</string>
 
 
 

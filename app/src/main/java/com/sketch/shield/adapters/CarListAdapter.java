@@ -9,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sketch.shield.R;
+import com.sketch.shield.dataModel.CarData;
 import com.sketch.shield.dataModel.FamilyMemberData;
-import com.sketch.shield.dataModel.VendorData;
 
 import java.util.ArrayList;
 
-public class FamilyMemberAdapter extends
-        RecyclerView.Adapter<FamilyMemberAdapter.ItemViewHolder> {
+public class CarListAdapter extends
+        RecyclerView.Adapter<CarListAdapter.ItemViewHolder> {
 
     private Context context;
-    private ArrayList<FamilyMemberData> dataArrayList;
+    private ArrayList<CarData> dataArrayList;
 
 
     private onItemClickListner mListner;
@@ -27,24 +27,23 @@ public class FamilyMemberAdapter extends
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_2char, tv_name, tv_designation, tv_remove;
-        ImageView iv_call;
+        TextView tv_2char, tv_car_name_color, tv_car_no, tv_remove;
         onItemClickListner listner;
 
         public ItemViewHolder(View itemView, onItemClickListner listner) {
             super(itemView);
             tv_2char = itemView.findViewById(R.id.tv_2char);
-            tv_name = itemView.findViewById(R.id.tv_name);
-            tv_designation = itemView.findViewById(R.id.tv_designation);
+            tv_car_name_color = itemView.findViewById(R.id.tv_car_name_color);
+            tv_car_no = itemView.findViewById(R.id.tv_car_no);
             tv_remove = itemView.findViewById(R.id.tv_remove);
-            iv_call = itemView.findViewById(R.id.iv_call);
+
             this.listner = listner;
         }
     }
 
 
-    public FamilyMemberAdapter(Context context, ArrayList<FamilyMemberData> itemList,
-                               onItemClickListner listner){
+    public CarListAdapter(Context context, ArrayList<CarData> itemList,
+                          onItemClickListner listner){
 
         this.context = context;
         this.dataArrayList=itemList;
@@ -55,7 +54,7 @@ public class FamilyMemberAdapter extends
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.family_mem_list_item, parent,false);
+                .inflate(R.layout.car_list_item, parent,false);
         ItemViewHolder dvh = new ItemViewHolder(v, mListner);
         return dvh;
     }

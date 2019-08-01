@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.sketch.shield.R;
 import com.sketch.shield.adapters.DrawerListAdapter;
 import com.sketch.shield.dataModel.DrawerItem;
+import com.sketch.shield.fragments.Car;
 import com.sketch.shield.fragments.FamilyMember;
 import com.sketch.shield.fragments.Home;
 import com.sketch.shield.fragments.Staff;
@@ -205,6 +206,9 @@ public class Container extends AppCompatActivity implements
                 break;
 
             case 5:
+
+                toolbar_title.setText(drawerItemArrayList.get(position).getTitle());
+                transactFragment(new Car());
 
                 break;
 
